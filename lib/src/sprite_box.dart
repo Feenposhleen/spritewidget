@@ -463,6 +463,8 @@ class SpriteBox extends RenderBox {
   }
 
   void _callUpdate(Node node, double dt) {
+    if (node.paused) return;
+
     node.update(dt);
     for (int i = node.children.length - 1; i >= 0; i--) {
       Node child = node.children[i];
